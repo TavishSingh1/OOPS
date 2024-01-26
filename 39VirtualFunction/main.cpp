@@ -5,7 +5,7 @@ class BaseClass
 {
 public:
     int var_base;
-    void display()
+    virtual void display()
     {
         cout << "Displaying var of base class: " << var_base << endl;
     }
@@ -31,9 +31,7 @@ int main()
     base_class_pointer = &obj_derived;
 
     base_class_pointer->var_base = 34;
-    // base_class_pointer->var_derived=134; Base class pointer is binded to members of base class and can only be used to process base class members.
 
-    base_class_pointer->display(); // this is called late binding
-    // Base class pointer is binded to members of base class and hence display fumction of base class is called.
+    base_class_pointer->display();
     return 0;
 }
